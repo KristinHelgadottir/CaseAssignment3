@@ -1,0 +1,30 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf470
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red22\green25\blue31;\red255\green255\blue255;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww8660\viewh11760\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 day 1:\
+\
+setting up the Github using Terminal, adding Persistence Unit to the cloned project after Clean and Build, one to run locally named pu_development and second one to run on Jarmos Digital Ocean server, called pu_digitalocean.\
+Jarmo posted a question in QA after having trouble with connecting to database up on his Digital Ocean server:\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\fs26 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 "Hello all!\
+I've tried using the mysql on your server pdf to guide me, but I cannot figure it out. So how do I connect to the database that is up on my digital ocean so that we can use it consistently? We are planning on having the server on mine and the application on somebody else's droplet. Should I do the connection just in the persistence or do I need to make a connection with the local MySQL workbench or something?"\
+\
+After all of us have made sure that we have our projects pulled from Github and up and running, we are trying to also make sure that we can commit and push the projects up on Git without any setbacks.\
+\
+Dividing tasks:\
+Diana and Kristin working on B - \'93changing the main page\'94 where we make sure that when user is logged in with user-role, we would add 2 entries [Company Info] and [Exchange Rate Info] that are only visible for that role and when logged in with admin-role, [All Users] entry would be seen.\
+We are starting by renaming the views packages, so we have better overview on what is located where.\
+\
+Jarmo is continuing to work on the database, point C - \'93create new MySQL database\'94 and D - \'93Deleting existing users\'94\
+\
+Kristin and Diana continuing on frontend with the jsp\'92s and html. We added tree more entries and had few problems with displaying the info, but after removing Login injection from module, we got the views working.\
+\
+In the REST package, Jarmo renamed User.java class to UserService, as we have another User.java class in ENTITY package. Then he created POST method addNewUser that takes in String content and returns String. The Path annotation is specifies as \'93/login\'94 and it consumes and produces media type JSON. Also this method throws PasswordStorage exception.\
+The method takes in two Strings userName and password as well as JSONObject. Then the method creates new user with the parameters userName and password.\
+\
+Kristin connected a waffle to our Github repository for adding and overviewing different tasks.}
