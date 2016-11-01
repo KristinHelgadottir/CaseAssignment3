@@ -3,6 +3,8 @@ package entity;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
@@ -74,8 +76,12 @@ public class User implements IUser, Serializable{
   }
 
     @Override
-    public String addUser() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void addUser(String userName, String password) {
+      try {
+          User u = new User(userName, password);
+      } catch (PasswordStorage.CannotPerformOperationException ex) {
+          Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
+      }
     }
      
 }

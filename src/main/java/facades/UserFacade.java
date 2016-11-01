@@ -52,7 +52,20 @@ public class UserFacade implements IUserFacade {
   //Method for adding the new user
     @Override
     public IUser addNewUser(String userName, String password) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        User u = new User();
+        
+        u.addUser(userName, password);
+        
+        EntityManager em = getEntityManager();
+        try {
+        em.getTransaction().begin();
+        em.persist(u);
+        em.getTransaction().commit();
+        return u;
+        }
+        finally {
+            em.close();
+        }
     }
 
 }

@@ -39,15 +39,14 @@ public class UserService {
   @Path("/login")
   @Consumes(MediaType.APPLICATION_JSON)
   @Produces(MediaType.APPLICATION_JSON)
-  public String addNewUser(String content) throws PasswordStorage.CannotPerformOperationException {
+  public void addNewUser(String content) throws PasswordStorage.CannotPerformOperationException {
   
       JSONObject data = (JSONObject)JSONValue.parse(content);
       String userName = (String)data.get("userName");
       String password = (String)data.get("password");
       
-      entity.User u = new User(userName, password);
+      entity.User u = new User(userName, password);      
       
-      return content;
   }
   
 }
