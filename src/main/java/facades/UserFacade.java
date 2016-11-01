@@ -14,6 +14,8 @@ public class UserFacade implements IUserFacade {
 
   EntityManagerFactory emf;
 
+  
+  
   public UserFacade(EntityManagerFactory emf) {
     this.emf = emf;   
   }
@@ -45,5 +47,12 @@ public class UserFacade implements IUserFacade {
       return null;
     }
   }
+
+  
+  //Method for adding the new user
+    @Override
+    public IUser addNewUser(String userName, String password) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 
 }

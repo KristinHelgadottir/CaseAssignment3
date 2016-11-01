@@ -72,5 +72,10 @@ public class User implements IUser, Serializable{
   public String getUserName() {
     return userName;
   }
+
+    @Override
+    public String addUser() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
      
 }
