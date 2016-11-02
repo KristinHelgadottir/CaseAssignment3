@@ -1,5 +1,18 @@
-<h3>This is the partial for CompanyInfo.</h3>
-<div>
-  <p>Data from server (Users only) <b style="color: darkblue">{{data.message}}</b></p>
-  <p>Server Time: <b style="color: darkblue">{{data.serverTime}}</b></p>
+
+<div class="container">
+  <p><b style="color: darkblue">{{data.message}}</b></p>
+  <form class="form-companyInfo">
+      <h2 class="form-companyInfo-heading">Find Company Information</h2>
+        <br>
+      <label for="inputText" class="sr-only">Search text</label>
+        <input type="text" id="text" class="form-control" placeholder="Search text" required autofocus>
+        <br>
+        <label for="inputOptions" class="sr-only">Options</label>
+        <input type="text" id="text" class="form-control" placeholder="Options" required>
+        <br>
+        <label for="inputCountry" class="sr-only">Country</label>
+        <input type="text" id="text" class="form-control" placeholder="Country" required>
+        <br>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Find</button>
+  </form>
 </div>
