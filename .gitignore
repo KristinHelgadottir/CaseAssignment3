@@ -12,3 +12,4 @@ nb-configuration.xml
 
 resources/META-INF/
 persistence.xml
+/nbproject/
