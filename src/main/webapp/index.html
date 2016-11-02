@@ -26,7 +26,7 @@
     <script src="app/companyInfo/companyInfo.js"></script>
     <script src="app/exchangeRateInfo/exchangeRateInfo.js"></script>
     <script src="app/allUsers/allUsers.js"></script>
-    <script src="app/login/login.js"></script>
+    <script src="app/signUp/signUp.js"></script>
     <script src="app/components/auth.js"></script>
     <script src="app/components/filters.js"></script>
     <script src="app/components/directives.js"></script>
@@ -53,10 +53,10 @@
             <ul class="nav navbar-nav">
               <li><a href="#/home">Home</a></li>
               <li><a href="#/documentation">Documentation</a></li>
-              <li><a href="#/companyInfo">Company Info</a></li>
-              <li><a href="#/exchangeRateInfo">Exchange Rate Info</a></li>
-              <li><a href="#/allUsers">All Users</a></li>
-              <li><a href="#/login">Login</a></li>
+              <li><a ng-show="isUser"href="#/companyInfo">Company Info</a></li>
+              <li><a ng-show="isUser" href="#/exchangeRateInfo">Exchange Rate Info</a></li>
+              <li><a ng-show="isAdmin" href="#/allUsers">All Users</a></li>
+              <li><a ng-hide="isUser + isAdmin" href="#/signUp">Sign up</a></li>
               
             </ul>
             <div>
@@ -92,9 +92,9 @@
     </div>
       
 
-    <script type="text/ng-template" id="errorModal.html">
-    
-   <div class="modal-header">
+<!--    <script type="text/ng-template" id="errorModal.html">
+        
+ <div class="modal-header">
       <h3 class="modal-title">Error!</h3>
       </div>
       <div class="modal-body">
@@ -103,7 +103,7 @@
       <div class="modal-footer">
       <button class="btn btn-primary" type="button" ng-click="ok()" autofocus>OK</button>
       </div>
-    </script>
+    </script>-->
 
   </body>
 </html>

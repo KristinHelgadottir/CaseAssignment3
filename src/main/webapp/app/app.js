@@ -12,7 +12,7 @@ angular.module('myApp', [
   'myApp.companyInfo',
   'myApp.exchangeRateInfo',
   'myApp.allUsers',
-  'myApp.login',
+  'myApp.signUp',
   'myApp.filters',
   'myApp.directives',
   'myApp.factories',
