@@ -2,20 +2,24 @@
 
 angular.module('myApp.companyInfo', ['ngRoute'])
 
-.config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/companyInfo', {
-    templateUrl: 'app/companyInfo/companyInfo.html',
-    controller: 'companyInfoCtrl'
-  });
-}])
+        .config(['$routeProvider', function ($routeProvider) {
+                $routeProvider.when('/companyInfo', {
+                    templateUrl: 'app/companyInfo/companyInfo.html',
+                    controller: 'companyInfoCtrl'
+                });
+            }])
 
-.controller('companyInfoCtrl', function($http,$scope) {
-  $http.get('api/demoadmin')
-            .success(function (data, status, headers, config) {
-              $scope.data = data;
-            })
-            .error(function (data, status, headers, config) {
-              
-             });
- 
-});
+        .controller('companyInfoCtrl', function ($http, $scope)
+        {
+            $http({
+                method: 'GET',
+                url: 'api/demouser'
+            }).then(function successCallback(res)
+            {
+                $scope.data = res.data.message;
+            }, function errorCallback(res)
+            {
+                $scope.error = res.status + ": " + res.data.statusText;
+            });
+
+        });
