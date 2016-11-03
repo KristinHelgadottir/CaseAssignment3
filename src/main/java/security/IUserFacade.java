@@ -18,12 +18,8 @@ public interface IUserFacade {
      */
     List<String> authenticateUser(String userName, String password);
 
-    IUser getPassword();
-    
-    IUser getUserName();
-    
     IUser getUserByUserId(String id);
     
-    IUser addUser(String userName, String password);
+    IUser addNewUser(String userName, String password);
     
 }
