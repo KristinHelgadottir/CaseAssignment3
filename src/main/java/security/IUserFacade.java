@@ -19,6 +19,8 @@ public interface IUserFacade {
      */
     List<String> authenticateUser(String userName, String password);
 
+    public User deleteUser(String userName);
+    
     IUser getPassword();
     
     IUser getUserName();

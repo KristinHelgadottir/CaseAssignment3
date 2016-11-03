@@ -19,7 +19,7 @@ import javax.ws.rs.core.MediaType;
  *
  * @author plaul1
  */
-@Path("demoall")
+@Path("all")
 public class All {
 
   @Context

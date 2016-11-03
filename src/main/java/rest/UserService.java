@@ -18,7 +18,7 @@ import java.util.List;
 import security.IUserFacade;
 import security.PasswordStorage;
 
-@Path("demouser")
+@Path("user")
 @RolesAllowed("User")
 public class UserService {
 
@@ -26,14 +26,6 @@ public class UserService {
     static IUserFacade uf = new UserFacade(Persistence.createEntityManagerFactory("pu_development"));
 
     public UserService() {
-    }
-
-    @GET
-    @Path("/allUsers")
-    @Produces(MediaType.APPLICATION_JSON)
-    public String getUsers() {
-        List<User> users = uf.getUsers();
-        return gson.toJson(users);
     }
 
     @POST

@@ -104,4 +104,19 @@ public class UserFacade implements IUserFacade {
         }
     }
 
+    @Override
+    public User deleteUser(String userName) {
+        EntityManager em = getEntityManager();
+         User u = em.find(User.class, userName);
+    try{
+        em.getTransaction().begin();
+        em.remove(u);
+        em.getTransaction().commit();
+        return u;
+    }finally{
+      em.close();
+    }
+    }
+    
+
 }
