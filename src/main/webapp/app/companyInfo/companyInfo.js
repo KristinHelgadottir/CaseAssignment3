@@ -14,13 +14,13 @@ angular.module('myApp.companyInfo', ['ngRoute'])
             $http({
                  method: 'GET',
                  url: 'http://cvrapi.dk/api/search'
-                }).then(function successCallback(res)
-                    {
-                        $scope.data = res.data.message;
-                    }, function errorCallback(res)
-                    {
-                        $scope.error = res.status + ": " + res.data.statusText;
-                    });
+                }).then(function (response) {
+                    $scope.names = response.data.records;
+                });
+                //,function errorCallback(res)
+                  //  {
+                    //    $scope.error = res.status + ": " + res.data.statusText;
+                    //});
                     //skipAuthentication: true;'
         });
       
