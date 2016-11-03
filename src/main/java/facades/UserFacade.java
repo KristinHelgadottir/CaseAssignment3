@@ -1,5 +1,6 @@
 package facades;
 
+import entity.Role;
 import security.IUserFacade;
 import entity.User;
 import java.util.List;
@@ -12,7 +13,7 @@ import security.PasswordStorage;
 
 public class UserFacade implements IUserFacade {
 
-    EntityManagerFactory emf;
+ EntityManagerFactory emf ;
 
     public UserFacade(EntityManagerFactory emf) {
         this.emf = emf;
@@ -22,7 +23,6 @@ public class UserFacade implements IUserFacade {
         return emf.createEntityManager();
     }
 
-    @Override
     public IUser getUserByUserId(String id) {
         EntityManager em = getEntityManager();
         try {
@@ -50,12 +50,12 @@ public class UserFacade implements IUserFacade {
     @Override
     public IUser addUser(String userName, String password) {
         User u = new User();
-
-        u.addUser(userName, password);
-
+        Role r = new Role("User");
         EntityManager em = getEntityManager();
         try {
             em.getTransaction().begin();
+            u.addUser(userName, password);
+            u.addRole(r);
             em.persist(u);
             em.getTransaction().commit();
             return u;
@@ -63,7 +63,7 @@ public class UserFacade implements IUserFacade {
             em.close();
         }
     }
-    
+
     @Override
     public IUser getPassword() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
