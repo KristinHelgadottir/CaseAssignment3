@@ -6,5 +6,4 @@ public interface IUser {
   List<String>  getRolesAsStrings();
   String getUserName();
   String getPassword();
-  void addUser(String userName, String password);
 }

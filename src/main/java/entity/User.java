@@ -75,13 +75,15 @@ public class User implements IUser, Serializable{
     return userName;
   }
 
-    @Override
-    public void addUser(String userName, String password) {
-      try {
-          User u = new User(userName, password);
+    public User addUser(String userName, String password) {
+      User u = null;
+        try {
+            u = new User(userName, password);
+          
       } catch (PasswordStorage.CannotPerformOperationException ex) {
           Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
       }
+      return u;
     }
      
 }
