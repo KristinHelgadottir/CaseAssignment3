@@ -17,12 +17,8 @@ angular.module('myApp.signUp', ['ngRoute'])
                     userName : $scope.user.userName,
                     password: $scope.user.password})
                 });
-
-
             };
             $http.post('/api/signUp', data).success(function(data){
                 $scope.PostResponseDetail = data;
             });
         });
-
-
