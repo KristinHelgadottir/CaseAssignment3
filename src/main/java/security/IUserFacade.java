@@ -5,6 +5,7 @@
  */
 package security;
 
+import entity.User;
 import java.util.List;
 
 /**
@@ -25,5 +26,7 @@ public interface IUserFacade {
     IUser getUserByUserId(String id);
     
     IUser addUser(String userName, String password);
+    
+    public List<User> getUsers();
     
 }

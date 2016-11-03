@@ -1,19 +1,20 @@
 package facades;
 
-import entity.Role;
 import security.IUserFacade;
 import entity.User;
+import static entity.User_.userName;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
+import javax.persistence.Query;
 import security.IUser;
 import security.PasswordStorage;
 
 public class UserFacade implements IUserFacade {
 
- EntityManagerFactory emf ;
+    EntityManagerFactory emf;
 
     public UserFacade(EntityManagerFactory emf) {
         this.emf = emf;
@@ -23,18 +24,20 @@ public class UserFacade implements IUserFacade {
         return emf.createEntityManager();
     }
 
-    public IUser getUserByUserId(String id) {
+    public void addEntityManagerFactory(EntityManagerFactory emf) {
+        this.emf = emf;
+    }
+
+    @Override
+    public IUser getUserByUserId(String userName) {
         EntityManager em = getEntityManager();
         try {
-            return em.find(User.class, id);
+            return em.find(User.class, userName);
         } finally {
             em.close();
         }
     }
 
-    /*
-  Return the Roles if users could be authenticated, otherwise null
-     */
     @Override
     public List<String> authenticateUser(String userName, String password) {
         IUser user = getUserByUserId(userName);
@@ -50,12 +53,10 @@ public class UserFacade implements IUserFacade {
     @Override
     public IUser addUser(String userName, String password) {
         User u = new User();
-        Role r = new Role("User");
         EntityManager em = getEntityManager();
         try {
             em.getTransaction().begin();
             u.addUser(userName, password);
-            u.addRole(r);
             em.persist(u);
             em.getTransaction().commit();
             return u;
@@ -70,8 +71,37 @@ public class UserFacade implements IUserFacade {
     }
 
     @Override
-    public IUser getUserName() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public IUser getUserName() { 
+// not sure if we need this as we have method above getUserByUserId where Id id userName
+        User u;
+        EntityManager em = getEntityManager();
+        try {
+            Query query = em.createQuery("SELECT u FROM User u WHERE u.userName = :userName");
+            query.setParameter("userName", userName);
+            u = (User) query.getSingleResult();
+            return u;
+
+        } finally {
+            em.close();
+        }
+    }
+
+    @Override
+    public List<User> getUsers() {
+        // GETTING ALL USERS AS LIST FOR ADMIN TO SEE
+        EntityManager em = getEntityManager();
+        try {
+            Query query = em.createQuery("select u from User u");
+            List<User> users = query.getResultList();
+            if (users != null) {
+                System.out.println("Got Users: " + users.size());
+            } else {
+                System.out.println("Got NULL");
+            }
+            return users;
+        } finally {
+            em.close();
+        }
     }
 
 }
