@@ -3,87 +3,98 @@
 // * To change this template file, choose Tools | Templates
 // * and open the template in the editor.
 // */
-//package facades;
+//package test.facade;
 //
+//import entity.User;
+//
+//import facades.UserFacade;
 //import java.util.List;
-//import org.junit.After;
-//import org.junit.AfterClass;
+//import javax.persistence.EntityManager;
+//import javax.persistence.EntityManagerFactory;
+//import javax.persistence.Persistence;
 //import org.junit.Before;
-//import org.junit.BeforeClass;
 //import org.junit.Test;
 //import static org.junit.Assert.*;
 //import security.IUser;
+//import security.IUserFacade;
+//import security.PasswordStorage;
 //
 ///**
 // *
 // * @author jarmo
 // */
 //public class UserFacadeTest {
-//    
+//
+//    static EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu_test");
+//    private static IUser facade = new UserFacade(emf);
+//
 //    public UserFacadeTest() {
 //    }
-//    
-//    @BeforeClass
-//    public static void setUpClass() {
-//    }
-//    
-//    @AfterClass
-//    public static void tearDownClass() {
-//    }
-//    
+//
 //    @Before
-//    public void setUp() {
+//    public void setUp() throws PasswordStorage.CannotPerformOperationException {
+//        EntityManager em = emf.createEntityManager();
+//        try {
+//            em.getTransaction().begin();
+//            em.createQuery("delete from User").executeUpdate();
+//            User u1 = new User("aa", "bb");
+//            em.persist(u1);
+//            em.getTransaction().commit();
+//        } finally {
+//            em.close();
+//        }
 //    }
 //    
-//    @After
-//    public void tearDown() {
+//    @Test
+//    public void testAddNewUser() throws PasswordStorage.CannotPerformOperationException {
+//        User u = new User("userName", "password");
+//    User result = facade.addNewUser(userName, password);
+//    assertNotNull(result.getUserName());
+//    EntityManager em = emf.createEntityManager();
+//    try {
+//      User result2 = em.find(User.class, result.getUserName());
+//      assertEquals("userName", result2.getUserName());
+//    } finally {
+//      em.close();
+//    }
 //    }
 //
-//    /**
-//     * Test of getUserByUserId method, of class UserFacade.
-//     */
 //    @Test
-//    public void testGetUserByUserId() {
-//        System.out.println("getUserByUserId");
-//        String id = "";
-//        UserFacade instance = null;
-//        IUser expResult = null;
-//        IUser result = instance.getUserByUserId(id);
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
+//  public void testGetUsers() {
+//    List<User> users = facade.getUsers(); // need to writte method for getting asll users for admin to see
+//    assertEquals(2, users.size());  
+//  }
 //
-//    /**
-//     * Test of authenticateUser method, of class UserFacade.
-//     */
-//    @Test
-//    public void testAuthenticateUser() {
-//        System.out.println("authenticateUser");
-//        String userName = "";
-//        String password = "";
-//        UserFacade instance = null;
-//        List<String> expResult = null;
-//        List<String> result = instance.authenticateUser(userName, password);
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
-//
-//    /**
-//     * Test of addNewUser method, of class UserFacade.
-//     */
-//    @Test
-//    public void testAddNewUser() {
-//        System.out.println("addNewUser");
-//        String userName = "admin";
-//        String password = "test";
-//        UserFacade instance = null;
-//        IUser expResult = null;
-//        IUser result = instance.addNewUser(userName, password);
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
-//    }
+////    @Test
+////    public void testGetUserByUserId() {
+////        System.out.println("getUserByUserId");
+////        String id = "";
+////        UserFacade instance = null;
+////        IUser expResult = null;
+////        IUser result = instance.getUserByUserId(id);
+////        assertEquals(expResult, result);
+////        // TODO review the generated test code and remove the default call to fail.
+////        fail("The test case is a prototype.");
+////    }
+////
+////    /**
+////     * Test of authenticateUser method, of class UserFacade.
+////     */
+////    @Test
+////    public void testAuthenticateUser() {
+////        System.out.println("authenticateUser");
+////        String userName = "";
+////        String password = "";
+////        UserFacade instance = null;
+////        List<String> expResult = null;
+////        List<String> result = instance.authenticateUser(userName, password);
+////        assertEquals(expResult, result);
+////        // TODO review the generated test code and remove the default call to fail.
+////        fail("The test case is a prototype.");
+////    }
+////
+////    /**
+////     * Test of addNewUser method, of class UserFacade.
+////     */
 //    
 //}
