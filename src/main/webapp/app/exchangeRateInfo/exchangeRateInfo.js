@@ -13,7 +13,7 @@ angular.module('myApp.exchangeRateInfo', ['ngRoute'])
         {
             $http({
                 method: 'GET',
-                url: 'api/demouser'
+                url: 'api/user'
             }).then(function successCallback(res)
             {
                 $scope.data = res.data.message;
