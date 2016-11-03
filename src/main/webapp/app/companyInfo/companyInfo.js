@@ -12,14 +12,15 @@ angular.module('myApp.companyInfo', ['ngRoute'])
         .controller('companyInfoCtrl', function ($http, $scope)
         {
             $http({
-                method: 'GET',
-                url: 'api/demouser'
-            }).then(function successCallback(res)
-            {
-                $scope.data = res.data.message;
-            }, function errorCallback(res)
-            {
-                $scope.error = res.status + ": " + res.data.statusText;
-            });
-
+                 method: 'GET',
+                 url: 'http://cvrapi.dk/api/search'
+                }).then(function successCallback(res)
+                    {
+                        $scope.data = res.data.message;
+                    }, function errorCallback(res)
+                    {
+                        $scope.error = res.status + ": " + res.data.statusText;
+                    });
+                    //skipAuthentication: true;'
         });
+      
