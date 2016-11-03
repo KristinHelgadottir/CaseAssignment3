@@ -2,7 +2,7 @@
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
- */
+
 package test.facade;
 
 import entity.User;
@@ -18,11 +18,11 @@ import static org.junit.Assert.*;
 import security.IUser;
 import security.IUserFacade;
 import security.PasswordStorage;
-
+ */
 /**
  *
  * @author jarmo
- */
+ 
 public class UserFacadeTest {
 
     static EntityManagerFactory emf = Persistence.createEntityManagerFactory("pu_test");
@@ -64,7 +64,7 @@ public class UserFacadeTest {
     List<User> users = facade.getUsers(); // need to writte method for getting asll users for admin to see
     assertEquals(2, users.size());  
   }
-
+*/
 //    @Test
 //    public void testGetUserByUserId() {
 //        System.out.println("getUserByUserId");
@@ -97,4 +97,4 @@ public class UserFacadeTest {
 //     * Test of addNewUser method, of class UserFacade.
 //     */
     
-}
+//}

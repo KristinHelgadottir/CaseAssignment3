@@ -7,4 +7,3 @@ angular.module('myApp.signUp', ['ngRoute'])
     templateUrl: 'app/signUp/signUp.html'
   });
 }]);
-
