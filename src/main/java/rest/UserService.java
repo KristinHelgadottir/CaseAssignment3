@@ -11,8 +11,6 @@ import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-import net.minidev.json.JSONObject;
-import net.minidev.json.JSONValue;
 import entity.User;
 import java.util.List;
 import security.IUserFacade;
