@@ -34,6 +34,6 @@ public class CurrencyService {
     @Consumes(MediaType.APPLICATION_XML)
     @Produces(MediaType.APPLICATION_JSON)
     public String getDailyrates() {
-        
+        return null;
     }
 }

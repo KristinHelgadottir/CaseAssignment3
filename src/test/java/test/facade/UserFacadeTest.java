@@ -61,7 +61,7 @@ public class UserFacadeTest {
 
     @Test
   public void testGetUsers() {
-    List<User> users = facade.getUsers(); // need to writte method for getting asll users for admin to see
+    List<User> users = facade.getUsers(); // need to write method for getting all users for admin to see
     assertEquals(2, users.size());  
   }
 */
