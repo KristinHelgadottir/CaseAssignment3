@@ -7,8 +7,7 @@ angular.module('myApp.allUsers', ['ngRoute'])
                 $routeProvider.when('/allUsers',
                         {
                             templateUrl: 'app/allUsers/allUsers.html',
-                            controller: 'AllUsersCtrl',
-                            controllerAs: 'ctrl'
+                            controller: 'getAllCtrl'
                         });
             }])
 
@@ -25,7 +24,7 @@ angular.module('myApp.allUsers', ['ngRoute'])
                     $scope.getAll = function () {
                 $http({
                     method: 'GET',
-                    url: '/api/getAll'
+                    url: '/api/admin/users'
                 }).then(function (response) {
                     $scope.users = response.data.records;
                 });
