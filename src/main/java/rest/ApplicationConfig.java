@@ -23,14 +23,14 @@ public class ApplicationConfig extends Application {
   private void addRestResourceClasses(Set<Class<?>> resources) {
     resources.add(httpErrors.GenericExceptionMapper.class);
     resources.add(httpErrors.NotFoundExceptionMapper.class);
-    resources.add(rest.AdminService.class);
+        resources.add(rest.AdminService.class);
     resources.add(rest.All.class);
     resources.add(rest.ExchangeRateService.class);
     resources.add(rest.UserService.class);
     resources.add(security.JWTAuthenticationFilter.class);
     resources.add(security.Login.class);
     resources.add(security.NotAuthorizedExceptionMapper.class);
-        resources.add(security.RolesAllowedFilter.class);
+    resources.add(security.RolesAllowedFilter.class);
    
    
   }

@@ -5,6 +5,8 @@
 // */
 //package rest;
 //
+//import entity.User;
+//import static io.restassured.RestAssured.given;
 //import org.junit.After;
 //import org.junit.AfterClass;
 //import org.junit.Before;
@@ -13,6 +15,7 @@
 //import static org.junit.Assert.*;
 //import io.restassured.RestAssured;
 //import static io.restassured.RestAssured.*;
+//import io.restassured.http.ContentType;
 //import io.restassured.parsing.Parser;
 //import static org.hamcrest.Matchers.*;
 //
@@ -20,27 +23,27 @@
 // *
 // * @author jarmo
 // */
-//public class AllTest {
-//    
-//    public AllTest() {
+//public class UserServiceTest {
+//
+//    public UserServiceTest() {
 //    }
-//    
+//
 //    @BeforeClass
 //    public static void setUpBeforeAll() {
-//        RestAssured.baseURI = "http://localhost";
+//        RestAssured.baseURI = "http://localhost:8080/seedMaven";
 //        RestAssured.port = 8080;
-//        RestAssured.basePath = "/api/all";
+//        RestAssured.basePath = "/api/user";
 //        RestAssured.defaultParser = Parser.JSON;
 //    }
-//    
+//
 //    @AfterClass
 //    public static void tearDownClass() {
 //    }
-//    
+//
 //    @Before
 //    public void setUp() {
 //    }
-//    
+//
 //    @After
 //    public void tearDown() {
 //    }
@@ -50,22 +53,28 @@
 //     */
 //    @Test
 //    public void serverIsRunning() {
-//        given().when().get().then().statusCode(200);
+//        given().when().get("http://localhost:8080/seedMaven/").then().statusCode(200);
 //    }
-//    
-//    
+//
 //    /**
-//     * Test of getText method, of class All.
+//     * Test of addUser method, of class UserService.
 //     */
 //    @Test
-//    public void testGetText() {
-//        System.out.println("getText");
-//        All instance = new All();
-//        String expResult = "";
-//        String result = instance.getText();
-//        assertEquals(expResult, result);
-//        // TODO review the generated test code and remove the default call to fail.
-//        fail("The test case is a prototype.");
+//    public void testAddUser() throws Exception {
+//        User u = new User("User1", "test");
+//        User newUser = given()
+//                .contentType("application/json")
+//                .body(u)
+//                .when().post("/signUp")
+//                .as(User.class);
+//        assertNotNull(newUser.getUserName());
+//        //Use username from result above
+//        given()
+//                .contentType(ContentType.JSON)
+//                .when().get("/api/user/" + newUser.getUserName()).then()
+//                .body("userName", notNullValue())
+//                .body("userName", equalTo("User1"));
+//
 //    }
-//    
+//
 //}
