@@ -91,7 +91,7 @@ public class UserFacade implements IUserFacade {
         // GETTING ALL USERS AS LIST FOR ADMIN TO SEE
         EntityManager em = getEntityManager();
         try {
-            Query query = em.createQuery("select u from User u");
+            Query query = em.createQuery("SELECT u FROM SEED.SEED_USER u");
             List<User> users = query.getResultList();
             if (users != null) {
                 System.out.println("Got Users: " + users.size());
