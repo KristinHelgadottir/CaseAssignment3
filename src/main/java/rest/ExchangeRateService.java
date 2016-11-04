@@ -7,8 +7,8 @@ package rest;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import entity.Country;
-import facades.CountryFacade;
+import entity.ExchangeRate;
+import facades.ExchangeRateFacade;
 import java.util.List;
 import javax.annotation.security.RolesAllowed;
 import javax.persistence.Persistence;
@@ -24,25 +24,25 @@ import javax.ws.rs.core.MediaType;
  */
 @Path("currency")
 @RolesAllowed("User")
-public class CurrencyService {
+public class ExchangeRateService {
 
     static Gson gson = new GsonBuilder().setPrettyPrinting().create();
-    static CountryFacade facade = new CountryFacade(Persistence.createEntityManagerFactory("pu_development"));
+    static ExchangeRateFacade facade = new ExchangeRateFacade(Persistence.createEntityManagerFactory("pu_development"));
 
-    public CurrencyService() {
+    public ExchangeRateService() {
     }
 
     @GET
     @Path("/dailyrates")
-    @Consumes(MediaType.APPLICATION_XML)
+    // doesent take in any media type data, only needs to return JSON
     @Produces(MediaType.APPLICATION_JSON)
     public String getDailyrates() {
-               List<Country> rates = facade.getRates();
+               List<ExchangeRate> rates = facade.getRates();
                return gson.toJson(rates);
     }
 
     @GET
-    @Path("/calculator")
+    @Path("/calculator/{amount}/{fromcurrency}/{tocurrency}")
     @Consumes(MediaType.APPLICATION_XML)
     public String returnsCalculatedAmount() {
         return null;
