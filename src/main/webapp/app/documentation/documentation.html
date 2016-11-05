@@ -21,7 +21,8 @@
         </ul>
       </div>
       <div class="col-md-4">
-        <img src='app/documentation/image/architecture.PNG' style="width: 100%;">
+          <img src="image/architecture.PNG" alt="Architecture" 
+               style="max-width: calc(100% - 150px); max-height: calc(100%-150px)"/>
       </div>
     </uib-accordion-group>
 
@@ -36,7 +37,8 @@
         Frontend Architecture
       </uib-accordion-heading>
       <div class ="col-md-3">
-        <img style="width: 100%;" src="app/documentation/image/ClientArchitecture.PNG">
+          <img src="image/ClientArchitecture.PNG" alt="ClientArchitecture"
+               style="max-width: calc(100% - 150px); max-height: calc(100%-150px)"/>
       </div>
       <div class ="col-md-9">
         <em style="font-weight: bold">Note: </em>   
@@ -63,7 +65,35 @@
       <p>No support for (out-of-the-box) Client Side Testing with this version of the seed </p>
     </uib-accordion-group>
     <uib-accordion-group heading="Backend Testing" >
-     
+        <div>
+        <p>The backend testing for this project is not much due to having very little
+        time to implement a lot of it due to other problems in the project
+        which prevented a lot of the required learning process to even know
+        the basics of the required testing. As it is most of the tests are commented
+        out. What testing was done yielded in errors and failures most of the time.
+        
+        In the beginning all the tests passed since they were the seed-based ones
+        and during the development cycle most of the time if the tests passed
+        we simply forgot to make a note of it.
+        <br/>
+        <br/>
+        <img src="image/AdminGetUserTest.PNG" alt="AdminGetUsersFailure" 
+             style="max-width: calc(100% - 150px); max-height: calc(100%-150px)"/>
+        <br/>
+        <br/>
+        <img src="image/TestAddUserFail.PNG" alt="AddUserFail" 
+             style="max-width: calc(100% - 150px); max-height: calc(100%-150px);"/>
+        <br/>
+        <br/>
+        <img src="image/TestFailAdmin.PNG" alt="AdminFail" 
+             style="max-width: calc(100% - 150px);max-height: calc(100%-150px);"/>
+        <br/>
+        <br/>
+        <img src="image/TestFailUser.PNG" alt="UserFail" 
+             style="max-width: calc(100% - 150px);max-height: calc(100%-150px);"/>
+        
+        </p>
+        </div>
     </uib-accordion-group>
   </uib-accordion>
 </div>

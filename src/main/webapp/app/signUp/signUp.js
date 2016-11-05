@@ -10,15 +10,16 @@ angular.module('myApp.signUp', ['ngRoute'])
 
         .controller('signUpCtrl', function ($scope, $http) {
             $scope.user = {};
-
+            $scope.data = {};
             $scope.signUp = function () {
-                var data = $.param({
+                $scope.data = $.param({
                     json: JSON.stringify({
                     userName : $scope.user.userName,
                     password: $scope.user.password})
                 });
             };
-            $http.post('/api/signUp', data).success(function(data){
-                $scope.PostResponseDetail = data;
+            $http.post('/seedMaven/api/all/signUp', $scope.data).success(function(data){
+                
+                $scope.PostResponseDetail = $scope.data;
             });
         });

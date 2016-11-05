@@ -26,20 +26,6 @@ public class UserService {
     public UserService() {
     }
 
-    @POST
-    @Path("/signUp")
-    @Consumes(MediaType.APPLICATION_JSON)
-    @Produces(MediaType.APPLICATION_JSON)
-    public String addUser(String userJsonStr) throws PasswordStorage.CannotPerformOperationException {
-//        JSONObject data = (JSONObject) JSONValue.parse(content);
-//        String userName = (String) data.get("userName");
-//        String password = (String) data.get("password");
-//        entity.User u = new User(userName, password);
-
-        User u = gson.fromJson(userJsonStr, User.class);
-        User newUser =  (User) uf.addUser(userJsonStr, userJsonStr);
-        String jsonResult = gson.toJson(newUser);
-        return jsonResult;
-    }
+    
 
 }
