@@ -53,20 +53,15 @@
 //    public void serverIsRunning() {
 //        given().when().get().then().statusCode(200);
 //    }
-//
-//    /**
-//     * Test of getUsers method, of class AdminService.
-//     */
-////    @Test
-////    public void testGetUsers() {
-//////        System.out.println("getUsers");
-//////        AdminService instance = new AdminService();
-//////        String expResult = "";
-//////        String result = instance.getUsers();
-//////        assertEquals(expResult, result);
-//////        // TODO review the generated test code and remove the default call to fail.
-//////        fail("The test case is a prototype.");
-////    }
+////
+////    /**
+////     * Test of getUsers method, of class AdminService.
+////     */
+//    @Test
+//    public void testGetUsers() {
+//        given().contentType("application/json").when().get("/users").
+//                then().body("users.findAll", hasItems("User"));
+//    }
 ////
 ////    /**
 ////     * Test of deleteUserByName method, of class AdminService.
@@ -82,5 +77,5 @@
 ////        // TODO review the generated test code and remove the default call to fail.
 ////        fail("The test case is a prototype.");
 ////    }
-//
+////
 //}

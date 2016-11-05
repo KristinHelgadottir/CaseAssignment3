@@ -72,8 +72,8 @@
 //        given()
 //                .contentType(ContentType.JSON)
 //                .when().get("/api/user/" + newUser.getUserName()).then()
-//                .body("userName", notNullValue())
-//                .body("userName", equalTo("User1"));
+////                .body("userName", notNullValue())
+//                .body("userName", hasItem("User1"));
 //
 //    }
 //
