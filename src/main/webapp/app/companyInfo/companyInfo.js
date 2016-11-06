@@ -13,7 +13,7 @@ angular.module('myApp.companyInfo', ['ngRoute'])
         {
             $http({
                  method: 'GET',
-                 url: 'http://cvrapi.dk/api/search'
+                 url: 'api/user'
                 }).then(function (response) {
                     $scope.names = response.data.records;
                 });

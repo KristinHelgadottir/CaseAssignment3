@@ -14,12 +14,21 @@ angular.module('myApp.exchangeRateInfo', ['ngRoute'])
             $http({
                 method: 'GET',
                 url: 'api/user'
-            }).then(function successCallback(res)
-            {
-                $scope.data = res.data.message;
-            }, function errorCallback(res)
-            {
-                $scope.error = res.status + ": " + res.data.statusText;
+            }).then(function (response) {
+                $scope.names = response.data.records;
             });
-
+            //,function errorCallback(res)
+            //  {
+            //    $scope.error = res.status + ": " + res.data.statusText;
+            //});
+            //skipAuthentication: true;'
         });
+
+
+//function get(json) {
+//    var rate = json['rate'];
+//}
+//var script = document.createElement('script');
+//script.src = 'http://www.nationalbanken.dk/_vti_bin/DN/DataService.svc/CurrencyRatesHistoryXML?lang=da'+
+//    '&callback=get';
+//document.head.appendChild(script);

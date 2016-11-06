@@ -1,99 +1,178 @@
-
-
 <h1>Documentation</h1>
-
 <div >
-  <uib-accordion>
-    <uib-accordion-group heading="Getting the Seed" >
-      
-    </uib-accordion-group>
-    <uib-accordion-group is-open="status.isFirstOpen" >
-      <uib-accordion-heading>
-        Architecture
-      </uib-accordion-heading>
-
-      <p></p>
-
-      <div class="col-md-8">
-        <ul>
-          <li>As usual all Backend Code should be placed in the <em>Source Packages</em> Folder</li>
-          <li>As usual all Client Code should be placed in the <em>Web Pages</em> Folder (in the sub-folder <b>app</b>) which holds the Angular Frontend Project</li>
-        </ul>
-      </div>
-      <div class="col-md-4">
-          <img src="image/architecture.PNG" alt="Architecture" 
-               style="max-width: calc(100% - 150px); max-height: calc(100%-150px)"/>
-      </div>
-    </uib-accordion-group>
-
-    <uib-accordion-group >
-      <uib-accordion-heading>
-        Backend Architecture
-      </uib-accordion-heading>  
-    </uib-accordion-group>
-
-    <uib-accordion-group >
-      <uib-accordion-heading>       
-        Frontend Architecture
-      </uib-accordion-heading>
-      <div class ="col-md-3">
-          <img src="image/ClientArchitecture.PNG" alt="ClientArchitecture"
-               style="max-width: calc(100% - 150px); max-height: calc(100%-150px)"/>
-      </div>
-      <div class ="col-md-9">
-        <em style="font-weight: bold">Note: </em>   
-        <ol class="list">
-          <li></li>
-          <li></li>
-        </ol>
-      </div>
-    </uib-accordion-group>
-
-    <uib-accordion-group heading="Security Features in the Seed" >
-      <h3>Headline</h3>
-     
-      <ul style="font-size: large">
-        <li><b style="display: inline-block;width:7em;">User</b>username = user, password = test</li>
-        <li><b style="display: inline-block;width:7em;">Admin:</b>username = admin, password = test</li>
-        <li><b style="display: inline-block;width:7em;">User+Admin:</b>username = user_admin, password = test</li>
-      </ul>
-      <h3>Using the Security Features in this seed - <em>Server:</em></h3>
-    </uib-accordion-group>
-    
-   
-    <uib-accordion-group heading="Client Side Testing" >
-      <p>No support for (out-of-the-box) Client Side Testing with this version of the seed </p>
-    </uib-accordion-group>
-    <uib-accordion-group heading="Backend Testing" >
-        <div>
-        <p>The backend testing for this project is not much due to having very little
-        time to implement a lot of it due to other problems in the project
-        which prevented a lot of the required learning process to even know
-        the basics of the required testing. As it is most of the tests are commented
-        out. What testing was done yielded in errors and failures most of the time.
-        
-        In the beginning all the tests passed since they were the seed-based ones
-        and during the development cycle most of the time if the tests passed
-        we simply forgot to make a note of it.
-        <br/>
-        <br/>
-        <img src="image/AdminGetUserTest.PNG" alt="AdminGetUsersFailure" 
-             style="max-width: calc(100% - 150px); max-height: calc(100%-150px)"/>
-        <br/>
-        <br/>
-        <img src="image/TestAddUserFail.PNG" alt="AddUserFail" 
-             style="max-width: calc(100% - 150px); max-height: calc(100%-150px);"/>
-        <br/>
-        <br/>
-        <img src="image/TestFailAdmin.PNG" alt="AdminFail" 
-             style="max-width: calc(100% - 150px);max-height: calc(100%-150px);"/>
-        <br/>
-        <br/>
-        <img src="image/TestFailUser.PNG" alt="UserFail" 
-             style="max-width: calc(100% - 150px);max-height: calc(100%-150px);"/>
-        
-        </p>
-        </div>
-    </uib-accordion-group>
-  </uib-accordion>
+    <uib-accordion>
+        <uib-accordion-group heading="Daily Log" >
+            <div class="col-md-8">
+                <h4>Monday</h4>
+                <p>The git hub repository was set up at 6:00 am, with the git ignore file, by Kristin, with a waffle connected to it. Scrum was read up on, and notes were made. 
+                    As soon as we were presented to the Case Assignment, we realized that a new repository was needed,
+                    as we got an initial starty-up seed to work from. The new repository could not be made untill we got the seed including
+                    changes. 
+                </p>
+                <p>
+                    Since none of us successfully could get through the exercise: handeling passwords in the seed we had to wait for the new version
+                    to be uploaded, wich happaned 18 pm monday, so we did not get the start we wished for. Jarmo cloned the seed Monday night and initialized
+                    some of the classes nessesary for the project. We all read the Case Assignment a couple of times Monday night.
+                </p>
+                <h4>Tuesday</h4>
+                <p>We set up a new repository in Git hub the correct way (using the Git Bash terminal), and added a Git ignore file containing the Persistence.xml
+                    wich cost us a lot of grief in CA 2. </p>
+                <p>
+                    After all of us have made sure that we have our projects
+                    pulled from Github and up and running, we all cloned, 
+                    cleaned and build, made a change and committed, to make 
+                    shure everybody could push, to the projects up on Git, without any setbacks.
+                </p>
+                <p>Jarmo posted a question in QA after having trouble with connecting to database up on his Digital Ocean 
+                    server: <br/> 
+                    "Hello all! I've tried using the mysql on your server pdf to guide me, but I cannot figure it out. 
+                    So how do I connect to the database that is up on my digital ocean so that we can use it consistently?
+                    We are planning on having the server on mine and the application on somebody else's droplet. 
+                    Should I do the connection just in the persistence or do I need to make a connection with the 
+                    local MySQL workbench or something?" </br>
+                </p>
+                <p>None off us ever had to use the database's MySql driver through anothers server, so we had to use a lot of time to learn that.(Or Jarmo did)
+                </p>
+                <p>While Jarmo was buisy with th database, Kristin and Diana were working on the front end and the authorities,
+                    making shure the right views were available to the right users. 
+                    We renamed the views packages, so we have better overview on what is located where. 
+                </p> 
+                <p>Jarmo continues to work on the database, point C - “create new MySQL database” and D - 
+                    “Deleting existing users”. Kristin and Diana continuing on frontend with the jsp’s and html. 
+                    We added tree more entries and had few problems with displaying the info, but after removing 
+                    Login injection from module, we got the views working. In the REST package, Jarmo renamed User.java 
+                    class to UserService, as we have another User.java class in ENTITY package. 
+                    Then he created POST method addNewUser that takes in String content and returns String. 
+                    The Path annotation specifies as “/login” and it consumes and produces media type JSON. 
+                    Also this method throws PasswordStorage exception. The method takes in two Strings userName and password as a JSONObject.
+                    Then the method creates a new user with the parameters userName and password. Jarmo also created a Unit test class for the facades and will try to implement a test case for the addUser method. Kristin connected a waffle to our Github repository, where we could add tasks and get an overview of the project. Also uploaded documentation on Github and the whole project is now on DigitalOcean on Dianas server.
+                </p>
+                <p>
+                    We have three persistence units. One for testing called pu_testing, another for local storage 
+                    and development: pu_development, and yet another to connect to Jarmos Digital Ocean droplet, 
+                    wich holds the MySql databace wich is called pu_digitalocean.
+                </p>
+                <p>So far the Git Hub is working with out a hinge</p>
+                <h4>Wendenday</h4>
+                <p>Jarmo continues working on Persistence Unit for the remote database and posted this question on QA:
+                    “I changed our peristence.xml to point to our DB which is on my (Jarmo) server up and running.
+                    I made sure to make the users accordingly to use the Seed db and granted them all the privileges for the Seed-DB.
+                    I made sure to specify that both localhost and any which IP is allowed and copy-pasted the passwords [into the persistence] whilst making them in MySQL.
+                </p>
+                <p>Jarmo is now working on front end with signing up as a new user.
+                    Kristin addid Application config file to the Git ignore file and continues to work on the open data CVR. 
+                    Diana is continuing with the REST package.</p>                    
+                <h4>Thursday</h4>
+                <p>Jarmo is fixing the addUser method in REST. Kristin is starting on using open data from milestone 2,
+                    Diana is setting up and working on testing user facade.
+                    After creating the package test.facade and making test class for testing user, creating entity manager and calling facade in, 
+                    there was difficulty to understand which facade interface to use IUser or IUserFacade. After looking over and over we 
+                    implemented in UserFacade class all the methods from both IUser and IUserFacade in order to be able to call them for testing.
+                </p>
+                <p>In entity package, User class, Diana rewrote addUser method so it returns User once added in order to be able to test the method.
+                    Also removed addUser method in IUser interface as it was returning void. Also as we will need to show all users for admin, 
+                    Diana added in IUserFacade interface class method getUsers that returns a list with users, afterwards writing the method in 
+                    UserFacade class and adding in REST package in GET annotation with path /allUsers method allUsers that produces JSON and returns son with all users. 
+                    Continuing working in REST package adding in AdminService get all users method and delete user by user name which is in our case the id.
+                </p>
+                <p>
+                    Jarmo is starting on creating exchange rate calculator. 
+                    Kristin is making normalised entity classes for the currency rates. 
+                    Diana is working on making facade for currency and REST.</p>
+                <h4>Friday</h4>
+                <p>Kristin is continuing on setting up database for currency exchange. 
+                    Jarmo is looking over tests for admin and user REST.
+                    Diana is continuing on setting up REST and facade for currency exchange.
+                    Diana added and working in ExchangeRate entity, ExchangeRateFacade and ExchangeRateService class, 
+                    also added new package XML with XmlReaderDemo given from the assignment.
+                    Kristin and Jarmo setting up pu_test for testing REST and facades.
+                </p>
+                <h4>Saturday</h4>
+                <p>Jarmo made a last effort in signup, tests and documentation. Diana continued working on the calculator backend</p>
+                <h4>Sunday</h4>
+                <p>Kristin gave up on the CVR API, and since she no longer was able to get the project connected with Git, 
+                    (after dropping and cloning everythin and everythings path's), she worked on documentation in the little time that was left</p>
+                <p>At this time, we were so tierd can not see straight :-P </p>
+            </div>
+        </uib-accordion-group>
+        <uib-accordion-group heading="Afterthoughts" >
+            <p>                
+                During the project we were in constant contact with each other.
+                We meat upp at 9 in school, (Jarmo was the first one there, always) and worked to 15. 
+                We all worked hard, and we helped each other as best we could.
+                A great deal of refactoring was needed in this project.</p>
+            <p>
+                There were many aspects of this project that were time-consuming. 
+                One thing is that we haven’t worked with REST for a while now, since we used 
+                the past few weeks to get a hold on AngularJS. Another thing is, trying to put 
+                all the newly learned pieces together, was extremely difficult. Little problems 
+                turned giant in our minds, and it was hard very time-consuming to get help. 
+                One thing is true, even though Kristins project was compromised when she tried 
+                to attach Application configuration to the git ignore file, we are almost masters of Git after the last CA.
+            </p>
+        </uib-accordion-group>
+        <uib-accordion-group is-open="status.isFirstOpen" >
+            <uib-accordion-heading>
+                Architecture
+            </uib-accordion-heading>
+            <p></p>
+            <div class="col-md-8">
+                <ul>
+                    <li>As usual all Backend Code should be placed in the <em>Source Packages</em> Folder</li>
+                    <li>As usual all Client Code should be placed in the <em>Web Pages</em> Folder (in the sub-folder <b>app</b>) which holds the Angular Frontend Project</li>
+                </ul>
+            </div>
+            <div class="col-md-4">
+                <img src="image/architecture.PNG" alt="Architecture" 
+                     style="max-width: calc(100% - 150px); max-height: calc(100%-150px)"/>
+            </div>
+        </uib-accordion-group>
+        <uib-accordion-group >
+            <uib-accordion-heading>
+                Backend Architecture
+            </uib-accordion-heading>  
+        </uib-accordion-group>
+        <uib-accordion-group >
+            <uib-accordion-heading>       
+                Frontend Architecture 
+            </uib-accordion-heading>
+            <div class ="col-md-3">
+                <img src="image/ClientArchitecture.PNG" alt="ClientArchitecture"
+                     style="max-width: calc(100% - 150px); max-height: calc(100%-150px)"/>
+            </div>
+            
+        </uib-accordion-group>
+        <uib-accordion-group heading="Client Side Testing" >
+            <p>No support for (out-of-the-box) Client Side Testing with this version of the seed </p>
+        </uib-accordion-group>
+        <uib-accordion-group heading="Backend Testing" >
+            <div>
+                <p>The backend testing for this project is not much due to having very little
+                    time to implement a lot of it due to other problems in the project
+                    which prevented a lot of the required learning process to even know
+                    the basics of the required testing. As it is most of the tests are commented
+                    out. What testing was done yielded in errors and failures most of the time.
+                    In the beginning all the tests passed since they were the seed-based ones
+                    and during the development cycle most of the time if the tests passed
+                    we simply forgot to make a note of it.
+                    <br/>
+                    <br/>
+                    <img src="image/AdminGetUserTest.PNG" alt="AdminGetUsersFailure" 
+                         style="max-width: calc(100% - 150px); max-height: calc(100%-150px)"/>
+                    <br/>
+                    <br/>
+                    <img ng-src="image/TestAddUserFail.PNG" alt="AddUserFail" 
+                         style="max-width: calc(100% - 150px); max-height: calc(100%-150px);"/>
+                    <br/>
+                    <br/>
+                    <img src="image/TestFailAdmin.PNG" alt="AdminFail" 
+                         style="max-width: calc(100% - 150px);max-height: calc(100%-150px);"/>
+                    <br/>
+                    <br/>
+                    <img src="image/TestFailUser.PNG" alt="UserFail" 
+                         style="max-width: calc(100% - 150px);max-height: calc(100%-150px);"/>
+                </p>
+            </div>
+        </uib-accordion-group>
+    </uib-accordion>
 </div>

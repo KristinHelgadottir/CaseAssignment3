@@ -6,10 +6,16 @@
 package facades;
 
 import entity.ExchangeRate;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
+import static javax.ws.rs.Priorities.USER;
 
 /**
  *
@@ -32,7 +38,7 @@ public class ExchangeRateFacade {
     }
 
     public List<ExchangeRate> getRates() {
-    EntityManager em = getEntityManager();
+        EntityManager em = getEntityManager();
         try {
             Query query = em.createQuery("SELECT e FROM SEED.EXCHANGE_RATE e");
             List<ExchangeRate> rates = query.getResultList();
@@ -44,7 +50,7 @@ public class ExchangeRateFacade {
             return rates;
         } finally {
             em.close();
-        }    
+        }
     }
 
     public ExchangeRate getRateByCurrency(String currency) {

@@ -41,7 +41,7 @@ public class ExchangeRateService {
                return gson.toJson(rates);
     }
 
-    @GET
+    @GET 
     @Path("/calculator/{amount}/{fromcurrency}/{tocurrency}")
     @Consumes(MediaType.APPLICATION_XML)
     public String returnsCalculatedAmount() {
