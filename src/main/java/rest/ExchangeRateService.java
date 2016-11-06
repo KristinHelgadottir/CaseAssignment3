@@ -45,6 +45,7 @@ public class ExchangeRateService {
     @Path("/calculator/{amount}/{fromcurrency}/{tocurrency}")
     @Consumes(MediaType.APPLICATION_XML)
     public String returnsCalculatedAmount() {
+        
         return null;
     }
 }
